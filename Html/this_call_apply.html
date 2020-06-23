@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this&call&apply</title>
+</head>
+<body>
+<button>
+    作为对象的方法调用
+</button>
+</body>
+<script>
+    document.getElementsByTagName("button").onclick=function () {
+        console.info("dinaji")
+        window.location.href = 'as_obj.html'
+    }
+    //作为对象的方法调用
+    var obj = {
+        a : 1,
+        getA:function () {
+            console.info(this === obj) // true
+            console.info(this.a)   // 1
+        }
+    }
+    obj.getA()
+</script>
+<style>
+    button{
+        background: brown;
+    }
+</style>
+</html>

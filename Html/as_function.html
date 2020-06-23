@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>普通函数调用</title>
+</head>
+<body>
+<div id="div1">this is div</div>
+
+</body>
+<script>
+    // window.name = "globalName"
+    // var getName = function () {
+    //     return this.name
+    // }
+    // console.info(getName()) //globalName
+    // //或者这样写
+    // window.name = "globalName"
+    // var obj = {
+    //     name: 'seven',
+    //     getName: function () {
+    //         return this.name
+    //     }
+    // }
+    // var getName = obj.getName;
+    // console.info(getName()) //globalName
+    //改变this指向的写法
+    window.id = "windows"
+    document.getElementById('div1').onclick = function () {
+        console.info(this.id) //div1
+        var callback = function () {
+            console.info(this.id) //windows
+        }
+        callback()
+    }
+    document.getElementById('div1').onclick = function () {
+        console.info(this.id) //div1
+        let that = this;
+        var callback = function () {
+            console.info(that.id) //div1
+        }
+        callback()
+    }
+
+</script>
+</html>

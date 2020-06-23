@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>call&apply</title>
+</head>
+<body>
+<script>
+    var obj = {
+        name : 'seven',
+        getName : function () {
+        return this.name
+        }
+    };
+    var obj2 = {
+        name : 'anna'
+    };
+    console.info(obj.getName()) //seven
+    console.info(obj.getName.call(obj2)) //anna
+</script>
+</body>
+</html>

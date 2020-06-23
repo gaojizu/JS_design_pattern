@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>构造器使用</title>
+</head>
+<body>
+
+<script>
+    // var myClass = function () {
+    //     this.name = "seven"
+    // }
+    // var obj = new myClass()
+    // console.info(obj.name) //seven
+    var myClass = function () {
+        this.name = "seven"
+        return {
+            name: "anna"
+        }
+    }
+    var obj = new myClass()
+    console.info(obj.name) //anna
+</script>
+</body>
+</html>

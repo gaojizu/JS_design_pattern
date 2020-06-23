@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作为对象调用</title>
+</head>
+<body>
+<script>
+    //作为对象的方法调用
+    var obj = {
+        a : 1,
+        getA:function () {
+            console.info(this === obj) // true
+            console.info(this.a)   // 1
+        }
+    }
+    obj.getA()
+</script>
+</body>
+</html>
