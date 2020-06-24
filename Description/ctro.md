@@ -123,5 +123,22 @@ var obj = {
 ```
 > 当第一次调用的时候，他是作为obj的属性被调用，那么此时的this指向的是这个对象，所以他是有myName的属性的，但是getName2是来自obj.getName
 >此时是作为普通函数调用的，所以此时的this指向的是windows，但是我们windows并没有声明任何关于myName的值，所以是undefined
-
+- 再看一种情况
+```js
+  var getId = document.getElementById
+  getId('div1')
+```
+> 这段代码会报错，原因是很多的引擎中document.getElementById内部实现是用到this指向的，原本这个this是指向document的，当document.getElementById这个方法被调用的时候this指向也确实是改document
+> 但是当我们使用getId来引用这个，他的this指向指的是windows
+- 修复以后的代码：
+```js
+document.getElementById = (function (func) {
+        return function () {
+            return func.apply(document, arguments)
+        }
+    })(document.getElementById)
+    var getId = document.getElementById
+    var div = getId('div1')
+    console.info(div.id) //div1
+```
 

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>通过ID获取元素</title>
+</head>
+<body>
+<div id="div1">
+    this is div
+</div>
+</body>
+<script>
+    /**
+     * 很多的引擎中document.getElementById内部实现是用到this指向的，原本这个this是指向document的，当document.getElementById这个方法被调用的时候this指向也确实是改document
+     * 但是当我们使用getId来引用这个，他的this指向指的是windows
+     * @type {(elementId: string) => (HTMLElement | null)}
+     */
+    // var getId = document.getElementById
+    // getId('div1')
+    /**
+     * 修复
+     */
+    document.getElementById = (function (func) {
+        return function () {
+            return func.apply(document, arguments)
+        }
+    })(document.getElementById)
+    var getId = document.getElementById
+    var div = getId('div1')
+    console.info(div.id) //div1
+</script>
+</html>
