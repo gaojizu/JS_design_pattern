@@ -141,4 +141,4 @@ document.getElementById = (function (func) {
     var div = getId('div1')
     console.info(div.id) //div1
 ```
-
+#### apply and call
