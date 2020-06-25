@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>datalist</title>
+</head>
+<style>
+    input {
+        -webkit-writing-mode: horizontal-tb !important;
+        text-rendering: auto;
+        color: -internal-light-dark-color(black, white);
+        letter-spacing: normal;
+        word-spacing: normal;
+        text-transform: none;
+        text-indent: 0px;
+        text-shadow: none;
+        display: inline-block;
+        text-align: start;
+        -webkit-appearance: textfield;
+        background-color: -internal-light-dark-color(white, black);
+        -webkit-rtl-ordering: logical;
+        cursor: text;
+        margin: 0em;
+        font: 400 11px system-ui;
+        padding: 1px;
+        border-width: 2px;
+        border-style: inset;
+        border-color: initial;
+        border-image: initial;
+    }
+
+    datalist {
+        display: none;
+    }
+
+    option {
+        font-weight: normal;
+        display: block;
+        white-space: pre;
+        min-height: 1.2em;
+        padding: 0px 2px 1px;
+    }
+</style>
+<body>
+<!--使用 input 元素的 list 属性来绑定 datalist-->
+<input id="currData" list="Data"/>
+<datalist id="Data" onclick="getCurrData()">
+    <option value="JS"></option>
+    <option value="JAVA"></option>
+    <option value="PHP"></option>
+</datalist>
+</body>
+<script>
+    let currInput = document.getElementById("currData")
+    /**
+     * 这是一段错误的代码，不被执行的code
+     */
+    console.info(currInput)
+    function getCurrData() {
+        console.info("pass")
+    }
+</script>
+</html>

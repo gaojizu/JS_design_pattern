@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>time</title>
+</head>
+<body>
+<!--爬虫的时候知道这个是时间，然后语义化稍微好点-->
+<time id="time" datetime="2020-06-25T21:45:23"></time>
+</body>
+<script>
+    let label_time = document.getElementById("time")
+
+    function currTime() {
+        let time = new Date()
+        return label_time.innerHTML = time
+    }
+
+    setInterval(function () {
+        currTime()
+    }, 1000)
+</script>
+</html>

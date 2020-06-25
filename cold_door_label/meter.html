@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>meter</title>
+    <style>
+        meter {
+            -webkit-writing-mode: horizontal-tb !important;
+            -webkit-appearance: meter;
+            box-sizing: border-box;
+            display: inline-block;
+            height: 1em;
+            width: 5em;
+            vertical-align: -0.2em;
+            -webkit-user-modify: read-only !important;
+        }
+    </style>
+</head>
+<body>
+<!--进度条，可以改变的css样式在上面-->
+<meter value="2" max="100" high="101" low="0"></meter>
+<meter value="0.6"></meter>
+</body>
+</html>
