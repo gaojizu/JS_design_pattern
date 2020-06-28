@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas</title>
+    <style>
+        canvas{
+            border: 1px solid paleturquoise;
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="myCanvas" width="400" height="200"></canvas>
+</body>
+<script>
+    /**
+     * HTML5 <canvas> 标签用于绘制图像（通过脚本，通常是 JavaScript）。
+     * 不过，<canvas> 元素本身并没有绘制能力（它仅仅是图形的容器） - 您必须使用脚本来完成实际的绘图任务。
+     * getContext() 方法可返回一个对象，该对象提供了用于在画布上绘图的方法和属性。
+     * @type {HTMLElement}
+     */
+    //canvas本身是不具有绘画的功能的，他只是一块布，js才是具有绘画功能
+    var c = document.getElementById('myCanvas');
+    //canvas也是基于getContext("2d")这个对象进行作业
+    var crx = c.getContext("2d");
+
+
+
+</script>
+</html>

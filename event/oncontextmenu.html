@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>oncontextmenu</title>
+    <style>
+        #dia {
+            width: 100px;
+            background-color: #CCCCCC;
+            border: none;
+            /*display: flex;*/
+            /*flex-direction: column;*/
+            /*justify-items: center;*/
+            /*align-items: center;*/
+        }
+
+        #dia ul li {
+            list-style: none;
+        }
+
+        #dia ul li:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<dialog id="dia">
+    <ul>
+        <li>刷新</li>
+    </ul>
+</dialog>
+</body>
+<script>
+    //var dia = document.getElementById("dia")
+    document.oncontextmenu = function (e) {
+        e.preventDefault()//组织默认事件
+        e = e || window.event;
+        if (e.pageX || e.pageY) {
+            movex = e.pageX;
+            movey = e.pageY
+        }
+        console.info(movex,movey)
+        document.createElement("dialog")
+        document.getElementsByTagName("dialog").style = 'background:"#cccccc",width:100px'
+        var dia = document.getElementsByTagName("dialog")
+        dia.setAttribute("open", "")
+    }
+    document.onclick = function (e) {
+        e.preventDefault()
+        console.info("移除元素打开状态")
+        dia.removeAttribute("open")
+    }
+</script>
+</html>

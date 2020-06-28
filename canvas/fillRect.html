@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fillRect</title>
+</head>
+<body>
+<canvas id="currCanvas" width="400" height="200"></canvas>
+</body>
+<script>
+    /**
+     * fillStyle设置或返回用于填充绘画的颜色、渐变或模式  通常和fillRect()一起使用
+     * demo
+     * 画一块布，没有边框，背景默认白色，画布上从x=20，y=20的地方开始画一块100*100的#cccccc的方块
+     */
+    var c = document.getElementById("currCanvas")
+    var ctx = c.getContext("2d")
+    ctx.fillStyle = "#cccccc"
+    ctx.fillRect(20,20,100,100)
+</script>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>createPattern</title>
+</head>
+<body>
+<img alt="icon of plane" src="../static/img/send.png" id="plane" />
+<canvas id="currCanvas" width="600" height="500"></canvas>
+</body>
+<script>
+    var c = document.getElementById("currCanvas")
+    var ctx = c.getContext("2d")
+    var plane = document.getElementById("plane")
+    var pln = ctx.createPattern(plane,"repeat")
+    ctx.rect(0,0,100,100)
+    ctx.fillRect = pln
+    ctx.fill()
+</script>
+</html>

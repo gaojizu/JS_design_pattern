@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>shadowBlur</title>
+</head>
+<body>
+<canvas id="currCanvas" width="200" height="200"></canvas>
+</body>
+<script>
+    /**
+     * 绘制一个背景#830091，模糊级别为10，从x=20,y=20的地方开始，宽高分别为60，40
+     * @type {HTMLElement}
+     * 相关属性 shadowOffsetX shadowOffsetY
+     */
+    var c = document.getElementById("currCanvas")
+    var ctx = c.getContext("2d")
+    ctx.shadowBlur = 10 //模糊程度10
+    ctx.shadowColor = "#830091" //模糊颜色
+    ctx.shadowOffsetX = -20  //往左边偏移20个像素点  当0的时候 是正下方（正后方）
+    ctx.fillStyle = "green" //背景颜色
+    ctx.fillRect(20,20,60,40) //矩形大小
+</script>
+</html>

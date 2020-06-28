@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>createLinearGradient</title>
+</head>
+<body>
+<canvas id="currCanvas" width="200" height="200"></canvas>
+</body>
+<script>
+    /**
+     * createLinearGradient 创建线性的渐变对象。
+     * 可以使用addColorStop 定义颜色
+     * @type {HTMLElement}
+     */
+    var c = document.getElementById("currCanvas")
+    var ctx = c.getContext("2d")
+    var grd = ctx.createLinearGradient(0,0,180,0) //渐变开始的xy坐标，渐变结束的xy坐标
+    grd.addColorStop(0,"#000000") //从0到1的过程，中间可以继续加0.5的渐变颜色
+    grd.addColorStop(1,"#FFFFFF")
+    // ctx.fillStyle = grd
+    // ctx.fillRect(20,20,150,70)
+    ctx.strokeStyle = grd
+    ctx.strokeRect(20,20,150,50)
+</script>
+</html>

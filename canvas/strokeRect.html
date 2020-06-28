@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>strokeRect</title>
+</head>
+<body>
+<canvas id="currCanvas" width="200" height="200"></canvas>
+</body>
+<script>
+    /**
+     * 使用画布绘制一个矩形，颜色为#91cb7b，从x=20，y=20，宽高分别为50，50的正方形
+     * @type {HTMLElement}
+     */
+    var c = document.getElementById("currCanvas")
+    var ctx = c.getContext("2d")
+    ctx.strokeStyle = "#91cb7b"
+    ctx.strokeRect(20,20,50,50)
+</script>
+</html>
