@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			for (var i = 0; i <= 3; i++) {
+				console.info(i)
+			}
+			console.info(i) //这里是可以访问的到的，因为var是没有块级作用域的
+			for (let i = 0; i <= 3; i++) {
+				console.info(i)
+			}
+			console.info(i) //这里会报错，因为let的具有块级作用域的，所以这里是访问不到的
+			for (var i = 0; i <= 3; i++) {
+				setTimeout(item => {
+					console.info(i)
+				}, 1000)
+			}
+			for (let i = 0; i <= 3; i++) {
+				setTimeout(item => {
+					console.info(i)
+				}, 1000)
+			}
+			for (var i = 0; i <= 3; i++) {
+				(function(a) {
+					setTimeout(item => {
+						console.info(a)
+					}, 1000)
+				})(i)
+
+			}
+
+			let Arr = []
+			for (let i = 0; i <= 3; i++) {
+				Arr.push(function() {
+					return i
+				})
+			}
+			console.info(Arr[0])
+
+
+
+			for (let i = 0; i <= 3; i++) {
+				(function(i) {
+					Arr.push(function() {
+						return i
+					})
+				})(i)
+
+			}
+			console.info(Arr[0])
+
+			let arr1 = [1, 2, 3, 4, 5, 4, 3, 234, 54, 32, 23, 76, 45, 234, 65, 76]
+
+			function between(a, b) {
+				//val是数组的属性
+				return function(val) {
+					return val >= a && val <= b
+				}
+			}
+			console.info(arr1.filter(between(1, 100))) //打印出1-100之间的存在arr1中的数据
+			//过滤的函数
+			let goods = [{
+				price: 100,
+				conut: 10,
+				name: "黄瓜"
+			}, {
+				price: 105,
+				conut: 19,
+				name: "冬瓜"
+			}, {
+				price: 80,
+				conut: 90,
+				name: "西瓜"
+			}, {
+				price: 99,
+				conut: 20,
+				name: "南瓜"
+			}, {
+				price: 120,
+				conut: 1,
+				name: "西红柿"
+			}]
+
+			function betweenPrice(a, b) {
+				return function(val) {
+					return val.price >= a && val.price <= b
+				}
+			}
+			console.table(goods.filter(betweenPrice(1, 100))) //打印出1-100之间的存在arr1中的数据
+
+			//排序的函数  
+			function order(field, type = "asc") {
+				return function(a, b) {
+					return type === "asc" ?
+						a[field] > b[field] ? 1 : -1 : a[field] > b[field] ? -1 : 1;
+				}
+			}
+			console.table(goods.sort(order("price", "desc")))  //降序排列
+		</script>
+	</body>
+</html>
