@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>select</title>
+    <script src="http://code.jquery.com/jquery-3.5.1.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+    <style>
+        select {
+            width: 100px;
+        }
+
+        #btn {
+            width: 50px;
+            height: 25px;
+            color: #FFFFFF;
+            margin-left: 40px;
+        }
+    </style>
+</head>
+<body>
+<!--<select name="" id="test" style="width: 100px;">-->
+<!--    <option value="0">java</option>-->
+<!--    <option value="1">c</option>-->
+<!--    <option value="2">php</option>-->
+<!--    <option value="3">python</option>-->
+<!--    <option value="4">javascript</option>-->
+<!--</select>-->
+<!--<script type="text/javascript">-->
+<!--    $("#test").select2();-->
+<!--</script>-->
+<select id="currSelect">
+    <!--<option>-->
+    <!--    <div>-->
+    <!--        <span>周口市</span>-->
+    <!--        <span>未定位</span>-->
+    <!--        <button>修改</button>-->
+    <!--    </div>-->
+    <!--</option>-->
+</select>
+</body>
+<script>
+
+    var sdata = [
+        {id: 1, text:"OPS--1"},
+        {id: 2, text:'OPS-COFFEE-2'},
+        {id: 3, text:'OPS-COFFEE-3'}
+    ]
+    $('select').select2({
+        data: sdata
+    });
+
+    $("select").select2({
+        tags: true,
+        width: 300,
+        placeholder: '请选择标签',
+        allowClear: true,
+        language: "zh-CN",
+        minimumResultsForSearch:-1,
+        data: sdata
+    });
+</script>
+</html>

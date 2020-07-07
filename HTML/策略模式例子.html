@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/**
+			 * 计算一个绩效考核的成绩，salary 基础分加 ABS的等级评分 strategies只负责进行计算结果
+			 * 使用策略模式实现  这样做的好处是消除了大量的if else语句
+			 */
+			var strategies = {
+				"A" : function(salary){
+					return salary * 4
+				},
+				"B" : function(salary){
+					return salary * 3
+				},
+				"S" : function(salary){
+					return salary * 2
+				},
+			}
+			var calculateBonus = function(level,salary){
+				return strategies[level](salary)
+			}
+			console.info(calculateBonus("S",2000))
+		</script>
+	</body>
+</html>
