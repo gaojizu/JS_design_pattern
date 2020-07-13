@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/**
+			 * 判断一个js的数据类型存在三种判断方式：
+			 * @one typeof typeof的返回永远是一个string类型的字符串，那么我们进行判断的时候就需要进行和字符串就行比较
+			 * @two instanceof  一般用来判断引用数据类型（Object,Function,Array）
+			 * @three ===  一般是和typeof一起进行判断是不是某一种数据类型
+			 */
+			var a 
+			console.info(typeof a ,"typeof a") //undefined
+			console.info(typeof a === 'undefined' ,"typeof a === 'undefined'") //true
+			var b = null
+			console.info(typeof b , "typeof b") //object
+			console.info(b instanceof Object) //false
+			console.info(b === null) //true
+			var obj = {}
+			console.info(typeof obj ,"typeof obj") //object
+			var arr = []
+			console.info(typeof arr) //object
+			var a= new function(){}
+			console.info(typeof a) //object
+			var a = function(){}
+			console.info(typeof a) //function
+			var obj1= {
+				b : [1,"a",console.info],
+				c : function(){
+					return function(){
+						"this is clearlove"
+					}
+				}
+			}
+			var a = null
+			console.info(a instanceof Object) //false 
+			console.info(obj1 instanceof Object ,"obj1 instanceof Object") //true
+			console.info(obj1.b instanceof Object ,"obj1.b instanceof Object") //true
+			console.info(obj1.c instanceof Object , "obj1.c instanceof Object") //true
+			console.info(obj1.b instanceof Array ,"obj1.b instanceof Array") //true
+			console.info(obj1.c instanceof Function ,"obj1.c instanceof Function") //true
+			var fun = function(){}
+			console.info(typeof fun) //function 
+			console.info(typeof fun === 'function' ,"typeof fun === 'function'") //true
+			/**
+			 * 注意的点：
+			 * @one Object 本身是一个构造函数，不是一种数据类型 object才是一种数据类型
+			 * @two 判断一个数据类型是不是函数的时候用到的是Function 而不是function  使用的是instanceof  而不是typeof
+			 * @three null是变量定义了只是初始化的时候为null
+			 * @fore undefined 是变量定义了，没有进行初始化
+			 * @five null的使用场景是变量初始化的时候，告诉计算机我这里是一个对象，但是我没有源数据，所以我直接进行赋值null，后面我会直接进行数据的赋值
+			 *       null的另一个使用场景是数据使用结束释放内存的时候，将一个不再使用的变量进行null赋值，可以直接被浏览器的垃圾回收给回收掉
+			 *       这也是为什么明明赋值了null，typeof的时候却是object的原因
+			 * @six 不管是函数还是数组，本质上都是对象的一种，只是函数是一种可以执行罢了，数组是可以进行根据下标进行数据的查找，这也是为什么上面的明明是对象，函数，数组，但是instanceof
+			 *      Object的时候返回true的原因
+			 */
+		</script>
+	</body>
+</html>

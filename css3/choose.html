@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="div1">
+			<p>我是段落1</p>
+			<p>我是段落2</p>
+			<p>我是段落3</p>
+			<p>我是段落4</p>
+			<span>我是span</span>
+		</div>
+		<input type="text" name="" id="" value="" />
+		<input type="radio" name="sex" id="" value="" checked="checked"/>
+		<input type="radio" name="sex" id="" value="" />
+		<input type="button" name="" id="" value="我是button1" />
+		<input type="button" name="" id="" value="我是button2" disabled="disabled"/> <br />
+		<a href="#a1">点击我id为a1的span会变色</a>
+		<span id="a1">我是id为a1的span</span>
+		<a href="#a2">点击我id为a2的span会变色</a>
+		<span id="a2">我是id为a2的span</span>
+	</body>
+	<style>
+		a{
+			text-decoration: none;
+		}
+		/* :first-of-type 选择该类型元素的第一个子元素 */
+		p:first-of-type{
+			color : darkred
+		}
+		/* :last-of-type 选择该元素的最后一个子元素 */
+		p:last-of-type{
+			color:green
+		}
+		/* :nth-of-type 选择该类型元素的第几个子元素 */
+		p:nth-of-type(2){
+			color: yellow;
+		}
+		/* :nth-last-of-type 从倒叙开始选择改元素的第几个子元素 */
+		p:nth-last-of-type(2){
+			color:orangered
+		}
+		/* ::selection 选择用户选中的部分 */
+		p::selection{
+			/* 用户选中的部分背景色为透明 */
+			background-color: transparent;  
+		}
+		/* :not 选择非用户指定内容的选择器 */
+		#div1 :not(p){
+			color: #FFFFFF
+		}
+		/* :root 根结点选择器 */
+		:root{
+			background: #7E7E7E;
+			color: #FFFFFF;
+		}
+		/* [attr =“value”] 属性选择器 */
+		input[type='text']{
+			width: 100px;
+		}
+		/* :enabled 选择状态可用的元素（button，inpout） */
+		input[type='button']:enabled{
+			border: none;
+			background: #008000;
+			color: #FFFFFF;
+			outline: none;
+		}
+		/* disabled 选择状态可用的元素（button，inpout） */
+		input[type='button']:disabled{
+			border: none;
+			background: greenyellow;
+			color: gray;
+		}
+		/* :checked 选择状态可用的元素（radio） */
+		input[type='radio']:checked::before{
+			content: "男";
+			color: red;
+		}
+		/* target 选择器  被当前锚点激活的对应的id的样式 */
+		#a1:target{
+			color: #008000;
+		}
+		#a2:target{
+			color: red;
+		}
+	</style>
+</html>
