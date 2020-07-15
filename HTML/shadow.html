@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+			<div id="d1">d1</div>
+			<div id="d2">d2</div>
+			<div id="d3">d3</div>
+			<div id="d4">d4</div>
+			<div id="d5">d5</div>
+			<div id="d6">d6</div>
+			<div id="d7">d7</div>
+			<div id="d8">d8</div>
+			<div id="d9">d9</div>
+			<div id="d10">d10</div>
+			<div id="d11">d11</div>
+			<div id="d12">d12</div>
+			<div id="d13">d13</div>
+			<div id="d14">d14</div>
+			<div id="d15">d15</div>
+			<div id="d16">d16</div>
+	</body>
+	<style type="text/css">
+		div{
+			color: #fff;
+			width: 200px;
+			height: 100px;
+			margin: 50px;
+			background-color: #008000;
+		}
+		/* box-shadow: x偏移量（负值为左）, y偏移量(负值为上), 模糊半径(不可以为负值),阴影大小（负值小于当前元素）,模糊颜色 ,inset（outset）外部阴影或者内部阴影; */
+		#d1{
+			/* 单边阴影-左侧10px阴影 */
+			box-shadow: -10px 0px 0px 0px orange;
+		}
+		#d2{
+			/* 单边阴影-右侧10px阴影 */
+			box-shadow: 10px 0px 0px 0px orange;
+		}
+		#d3{
+			/* 单边阴影-上方10px阴影 */
+			box-shadow: 0px -10px 0px 0px orange;
+		}
+		#d4{
+			/* 单边阴影-下方10px阴影 */
+			box-shadow: 0px 10px 0px 0px orange;
+		}
+		#d5{
+			/* 双边阴影-右下方10px的阴影 */
+			box-shadow: 10px 10px 0px 0px orange;
+		}
+		#d6{
+			/* 双边阴影-左下方10px的阴影 */
+			box-shadow: -10px -10px 0px 0px orange;
+		}
+		#d7{
+			/* 双边阴影-右上方10px的阴影 */
+			box-shadow: 10px -10px 0px 0px orange;
+		}
+		#d8{
+			/* 双边阴影-左下方10px的阴影 */
+			box-shadow: -10px 10px 0px 0px orange;
+		}
+		#d9{
+			/* 增加模糊半径为20px */
+			box-shadow: 10px 0px 20px 0px rgba(0,0,0,0.8);
+		}
+		#d10{
+			/* 增加模糊半径为10px */
+			box-shadow: 10px 0px 10px 0px rgba(0,0,0,0.8);
+		}
+		#d11{
+			/* 增加阴影大小为5px,增加模糊半径为10px */
+			box-shadow: 10px 0px 10px 5px rgba(0,0,0,0.5);
+		}
+		#d12{
+			/* 增加阴影大小为10px,增加模糊半径为10px */
+			box-shadow: 10px 0px 10px 10px rgba(0,0,0,0.5);
+		}
+		#d13{
+			/* 增加阴影大小为-20px,增加模糊半径为10px */
+			box-shadow: 0px 30px 20px -20px rgba(0,0,0,0.8);
+		}
+		#d14{
+			/* 增加阴影大小为-30px,增加模糊半径为20px */
+			box-shadow: 0px 50px 20px -30px rgba(0,0,0,0.8);
+		}
+		#d15{
+			/* 增加阴影大小为-30px,增加模糊半径为20px，内置阴影 */
+			box-shadow: 0px -50px 20px -30px rgba(0,0,0,0.8) inset;
+		}
+		#d16{
+			/* 左侧阴影10px,增加模糊半径为20px，内置阴影 */
+			box-shadow: 10px 0px 20px 0px rgba(0,0,0,0.8) inset;
+		}
+	</style>
+</html>
