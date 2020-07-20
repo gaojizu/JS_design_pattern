@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<!-- 谢谢大家观看  喜欢的话  不要忘记关注哦   因为我只之前就自己写好的一遍，所以是不需要一边写一边调试的，拜拜啦！ -->
+		<title>css云彩实现</title>
+	</head>
+	<body>
+		<div class="sky">
+			<div class="clounds_one"></div>
+			<div class="clounds_two"></div>
+			<div class="clounds_three"></div>
+		</div>
+	</body>
+	<style>
+		html,body{
+			margin: 0;
+			padding: 0;
+			height: 100%;
+		}
+		.sky{
+			height: 500px;
+			position: relative;
+			overflow: hidden;
+			animation: sky_background 50s ease-out infinite;
+			transform: translate3d(0,0,0);
+		}
+		.sky .clounds_one,.clounds_two,.clounds_three{
+			position: absolute;
+			left: 0;
+			top: 0;
+			height: 100%;
+			width: 300%;
+		}
+		.sky .clounds_one{
+			background: url(../static/cloud_one.png);
+			animation: clounds_one 50s linear infinite;
+			transform: translate3d(0,0,0);
+		}
+		.sky .clounds_two{
+			background: url(../static/cloud_two.png);
+			animation: clounds_one 70s linear infinite;;
+			transform: translate3d(0,0,0);
+		}
+		.sky .clounds_three{
+			background: url(../static/cloud_three.png);
+			/* 这里我们暂时不设置 */
+			animation: clounds_one 100s linear infinite;;  
+			transform: translate3d(0,0,0);
+		}
+		@keyframes sky_background{
+			0% {
+				background: #007FD5;
+				color: #007FD5;
+			}
+			50%{
+				background: #000;
+				color: #A3D9FF;
+			}
+			100%{
+				background: #007FD5;
+				color: #007FD5;
+			}
+		}
+		@keyframes clounds_one{
+			0% {
+				left: 0;
+			}
+			100%{
+				left: -200%;
+			}
+		}
+		@keyframes clounds_two{
+			0% {
+				left: 0;
+			}
+			100%{
+				left: -200%;
+			}
+		}
+		@keyframes clounds_three{
+			0% {
+				left: 0;
+			}
+			100%{
+				left: -200%;
+			}
+		}
+	</style>
+</html>

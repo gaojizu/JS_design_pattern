@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="sky">
+			<div class="clouds_one"></div>
+			<div class="clouds_two"></div>
+			<div class="clouds_three"></div>
+		</div>
+	</body>
+	<style>
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+			height: 100%
+		}
+
+		.sky {
+			height: 500px;
+			position: relative;
+			overflow: hidden;
+			animation: sky_background 50s ease-out infinite;
+			transform: translate3d(0, 0, 0);
+		}
+
+		.sky .clouds_one,
+		.clouds_two,
+		.clouds_three {
+			position: absolute;
+			left: 0;
+			top: 0;
+			height: 100%;
+			width: 300%;
+		}
+
+		.sky .clouds_one {
+			background: url("../static/cloud_one.png");
+			animation: cloud_one 50s linear infinite;
+			transform: translate3d(0, 0, 0);
+		}
+
+		.sky .clouds_two {
+			background: url("../static/cloud_two.png");
+			animation: cloud_two 75s linear infinite;
+			transform: translate3d(0, 0, 0);
+		}
+
+		.sky .clouds_three {
+			background: url("../static/cloud_three.png");
+			animation: cloud_three 100s linear infinite;
+			transform: translate3d(0, 0, 0);
+		}
+
+
+		@keyframes sky_background {
+			0% {
+				background: #007fd5;
+				color: #007fd5
+			}
+
+			50% {
+				background: #000;
+				color: #a3d9ff
+			}
+
+			100% {
+				background: #007fd5;
+				color: #007fd5
+			}
+		}
+
+
+		/*  @keyframes cloud_one {
+		      0% {
+		          left: 0
+		      }
+		
+		      100% {
+		          left: -200%
+		      }
+		  }
+		
+		
+		  @keyframes cloud_two {
+		      0% {
+		          left: 0
+		      }
+		
+		      100% {
+		          left: -200%
+		      }
+		  }
+		
+		 
+		
+		  @keyframes cloud_three {
+		      0% {
+		          left: 0
+		      }
+		
+		      100% {
+		          left: -200%
+		      }
+		  }*/
+
+		/*
+		  @-webkit-keyframes cloud_three {
+		      0% {
+		          left: 0
+		      }
+		
+		      100% {
+		          left: -200%
+		      }
+		  }
+		
+		  @-moz-keyframes cloud_three {
+		      0% {
+		          left: 0
+		      }
+		
+		      100% {
+		          left: -200%
+		      }
+		  }*/
+	</style>
+</html>
