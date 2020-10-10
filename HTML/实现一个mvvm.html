@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//				writable:true, //可以进行修改
+			//value: 'tom',
+			let obj = {}
+			Object.defineProperty(obj, 'company', {
+				configurable: true, //这样设置以后就可以直接删除了
+				enumerable: true, //可枚举
+				get() {
+					return 'tom'
+				},
+				set(val) {
+					console.info(val)
+				}
+			})
+			/**
+			 * get(){
+					
+				},
+				set(){
+					
+				}
+				存在的时候  是不可以存在value writable 属性的
+			 */
+			delete obj.company //还是存在的
+			console.info(obj)
+			//这样通过这个定义是不可以被删除掉的  
+			/**
+			 * 整理关于Object.defineProperty
+			 * 首先他的名字是对象定义属性，意思就是可以通过这个东西给对象定义属性，
+			 * 
+			 */
+			// let o = {}
+			// Object.defineProperty(o, 'csdn', {
+			// 	value: 'clearlove'
+			// })
+			// for (let i of o) {
+			// 	console.info(i)
+			// 	//Uncaught TypeError: o is not iterable
+			// }
+			// delete o.csdn //不起作用
+			// o.csdn = 'tom' //不起作用
+			// console.info(o)
+			//{csdn: "clearlove"}
+		    //结论：通过Object.defineProperty 定义的属性是不可以进行枚举，编辑，删除的
+
+
+			//可删除属性，configurable: true, 
+			// let o = {}
+			// Object.defineProperty(o, 'csdn', {
+			// 	configurable: true, //这样设置以后就可以直接删除了
+			// 	value: 'clearlove'
+			// })
+			// delete o.csdn
+			// console.info(o)
+			//{}
+
+
+			//可枚举属性 enumerable: true, 
+			// let o = {}
+			// Object.defineProperty(o, 'csdn', {
+			// 	enumerable: true, //可枚举
+			// 	value: 'clearlove'
+			// })
+			// console.info(o)
+			
+			//可编辑属性 writable:true
+			// let o = {}
+			// Object.defineProperty(o, 'csdn', {
+			// 	writable:true,
+			// 	value: 'clearlove'
+			// })
+			// o.csdn = 'tom'
+			// console.info(o)
+			//{csdn: "tom"}
+			
+			//get set方法
+			// let o = {}
+			// Object.defineProperty(o, 'csdn', {
+			// 	get(){
+			// 		return 'jim'
+			// 	},
+			// 	set(val){
+			// 		console.info("val")
+			// 		console.info(val)
+			// 		//val "tom" (自己输入的)
+			// 	}
+			// })
+			// console.info(o.csdn)
+			//jim
+			//Uncaught TypeError: Invalid property descriptor. Cannot both specify accessors and a value or writable attribute, #<Object>
+            // at Function.defineProperty (<anonymous>)
+			//这里报错说  使用get set方法的时候不可以使用value和writable
+			
+			
+			
+			//数据劫持 
+			
+			
+			
+		</script>
+	</body>
+</html>

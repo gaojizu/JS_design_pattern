@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../static/css/base.css"/>
+		
+	</head>
+	<body>
+		<div id="curr_drag" style="position:relative;left:50px;width: 200px;height: 200px;border: 2px solid #0000FF;">
+			可以拖动我试试
+		</div>
+		<div id="curr_drag1" style="position:relative;left:50px;width: 200px;height: 200px;border: 2px solid #0000FF;">
+			可以拖动我试试
+		</div>
+
+		<!-- <div id="obj1" class="dialog" style="position:relative;left:50px">
+		    <div class="header draggable">
+		        拖拽的有效元素
+		    </div>
+			
+		    <div class="content">
+		        拖拽对象1
+		    </div>
+		</div> -->
+	</body>
+	<script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="../static/js/draggable.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../static/js/jquery.draggable.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		$("#curr_drag").drag()
+		$("#curr_drag1").drag()
+	</script>
+	
+</html>
